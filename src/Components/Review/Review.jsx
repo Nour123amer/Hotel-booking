@@ -19,7 +19,7 @@ export default function Review() {
   }, []);
   return (
     <>
-      <div className="bg-slate-200 mt-12 py-6 rounded-lg">
+      <div className="bg-slate-200 mt-12 sm:w-full sm:px-6 py-6 rounded-lg">
         <h2 className="text-center text-xl font-bold mb-4 text-cyan-500">
           Good news from far away
         </h2>

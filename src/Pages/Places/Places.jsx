@@ -82,7 +82,7 @@ function cancelImageClick(){
         <title>Places</title>
         <meta name='description' content='welcome to about page' />
         </Helmet>
-      <div className="card text-center relative sm:pt-16 sm:mt-16md:mt-2 md:pt-2 ">
+      <div className="card text-center relative  md:mt-2 md:pt-2 ">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs flex justify-center gap-4">
             <li className="nav-item bg-cyan-500 rounded-md text-white px-3 py-2 font-semibold ">

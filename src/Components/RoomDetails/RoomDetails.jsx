@@ -60,11 +60,11 @@ console.log(selectedRoom);
    
   return (
 <>  
-  <div className='grid grid-cols-12 gap-4 mb-6' >
+  <div className='grid grid-cols-12 gap-4 mb-6 ' >
     {roomInfo ? (
         <>
-    <img className='rounded-md h-[200px] mb-2 col-span-4 w-full' src={roomInfo.images.length > 0 ? roomInfo.images[0].url :''} alt="" />
-    <div className='col-span-8' >
+    <img className='rounded-md h-[200px] mb-2 sm:col-span-12 lg:col-span-4 w-full' src={roomInfo.images.length > 0 ? roomInfo.images[0].url :''} alt="" />
+    <div className='sm:col-span-12 lg:col-span-8' >
      <h3 className='text-cyan-500 text-lg mb-2'>{roomInfo.title}</h3>
     <p className='line-clamp-2'>{roomInfo.description} </p>
     <p className='text-cyan-500'>{roomInfo.type}</p>
@@ -81,7 +81,7 @@ console.log(selectedRoom);
    <div className=' border border-gray-400 rounded-md p-4 shadow-xl' >
   {similarRooms? similarRooms.map((room)=> 
   <div key={room.id} className='grid grid-cols-12 gap-4 mb-4'>
-    <img className='rounded-md h-[200px] mb-2 col-span-4 w-full ' src={room.images ? room.images[0].url :''} alt="" />
+    <img className='rounded-md h-[200px] mb-2 sm:col-span-12 lg:col-span-4 w-full ' src={room.images ? room.images[0].url :''} alt="" />
     <div className='col-span-8' >
      <h3 className='text-cyan-500 text-lg mb-2'>{room.title}</h3>
     <p className='line-clamp-2'>{room.description} </p>

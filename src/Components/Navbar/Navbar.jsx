@@ -1,48 +1,111 @@
-import React, { useContext } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import  {ThemeContext}  from '../../App'
-export default function Navbar({noOfCartItems}) {
-  const {theme ,toggleTheme} = useContext(ThemeContext);
-  if( !theme){
-    console.log('000000000');
-    
+// 
+"use client"
+
+import { useContext, useState } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { ThemeContext } from "../../App"
+
+export default function Navbar({ noOfCartItems }) {
+  const { theme, toggleTheme } = useContext(ThemeContext)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
-   <>
+    <nav
+      className={`fixed top-0 right-0 left-0 z-10 shadow-lg py-4 px-4 md:px-6 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <Link className="navbar-brand font-bold flex gap-1 items-center" to="/home">
+          <i className="fa-solid fa-hotel"></i>
+          <p>Hotel</p>
+        </Link>
 
+        <button
+          className="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          onClick={toggleMobileMenu}
+          aria-expanded={isMobileMenuOpen}
+          aria-label="Toggle navigation"
+        >
+          <i className={`fa-solid ${isMobileMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+        </button>
 
-<nav className={`navbar navbar-expand-lg bg-body-tertiary bg-transparent ${theme === 'dark' ? 'bg-black text-white': 'bg-white text-black'} text-gray-400 fixed top-0 shadow-lg right-0 left-0 sm:px-6 md:px-16 py-2 sm:mb-12 smx:mb-4 md:mb-14 `}>
-  <div className="container-fluid sm:flex sm:flex-col  smx:flex smx:flex-row sm:w-full sm:gap-2 sm:text-sm md:flex-row  smx:justify-between w-5/6 mx-auto lg:py-4 lg:items-center  ">
-    <Link className="navbar-brand font-bold flex gap-1 items-center" to='/home'>
-    <i className="fa-solid fa-hotel"></i>
-    <p>Hotel</p></Link>
+        <div className={`${isMobileMenuOpen ? "block" : "hidden"} w-full lg:flex lg:w-auto lg:items-center`}>
+          <ul className="flex flex-col lg:flex-row lg:space-x-8 mt-4 lg:mt-0">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/home"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/about us"
+              >
+                About us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/rooms"
+              >
+                Rooms
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/places"
+              >
+                Places
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/contact us"
+              >
+                Contact us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-cyan-500 font-bold" : "text-gray-400 hover:text-cyan-500"
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </li>
+          </ul>
+        </div>
 
-    <button className="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon text-black"><i classn="fa-solid fa-bars"></i></span>
-    </button>
-
-    <div className="collapse navbar-collapse " id="navbarSupportedContent sm:flex sm:flex-col sm:items-start ">
-      <ul className="navbar-nav ms-auto mb-2 sm:gap-3 mb-lg-0 flex sm:flex-col sm:flex-start smx:flex-row items-start md:gap-2 lg:gap-4 justify-between">
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/home'>Home</NavLink > </li>
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/about us' >About us</NavLink ></li>
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/rooms'>Rooms</NavLink ></li>
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/places'>Places</NavLink ></li>
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/contact us'>Contact us</NavLink ></li>
-      {/* <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/menu'>Menu</NavLink ></li>
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/cart'>Cart <span>{noOfCartItems}</span></NavLink ></li> */}
-      <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/login'>Login</NavLink ></li>
-      {/* <li className='nav-item'> <NavLink className={ ({isActive})=> isActive ? 'text-cyan-500 font-bold ': 'text-gray-400' } to='/filteredrooms'>Filteredrooms</NavLink ></li> */}
-      </ul>
-    </div>
-
-    <button onClick={toggleTheme} className='flex items-center ml-4'>
-    {theme === 'light' ? 
-        ( <i class="fa-solid fa-sun"></i>) :(<i class="fa-solid fa-moon"></i>)}
-    </button>
-
-  </div>
-</nav>
-   </>
+        <button
+          onClick={toggleTheme}
+          className="flex items-center ml-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          {theme === "light" ? <i className="fa-solid fa-moon"></i> : <i className="fa-solid fa-sun"></i>}
+        </button>
+      </div>
+    </nav>
   )
 }
