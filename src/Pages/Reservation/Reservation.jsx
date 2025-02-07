@@ -63,10 +63,10 @@ export default function Reservation() {
    <>
    <h2 className='text-gray-500 font-bold text-lg drop-shadow-2xl mb-2 '>Reservation info</h2>
    <p className='mb-6 text-gray-500 text-lg'>All information about the room you want to reserve.</p>
-   <div className='grid grid-cols-12 gap-8'>
+   <div className='grid grid-cols-12 gap-8 sm:mb-16 '>
    {/* <RoomDetails roomInfo={selectedRoom} /> */}
-   <img className='rounded-md h-[200px] mb-2 col-span-4 w-full' src={selectedRoom.images.length > 0 ? selectedRoom.images[0].url :''} alt="" />
-    <div className='col-span-8' >
+   <img className='rounded-md h-[200px] mb-2 sm:col-span-12 lg:col-span-4 w-full' src={selectedRoom.images.length > 0 ? selectedRoom.images[0].url :''} alt="" />
+    <div className='sm:col-span-12 lg:col-span-8' >
      <h3 className='text-cyan-500 text-lg mb-2'>{selectedRoom.title}</h3>
     <p className='line-clamp-2'>{selectedRoom.description} </p>
     <p className='text-cyan-500'>{selectedRoom.type}</p>

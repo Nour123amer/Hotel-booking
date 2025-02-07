@@ -6,7 +6,7 @@ export default function Footer() {
   const {theme} = useContext(ThemeContext)
   return (
     <>
-      <div className={` ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} bg-white text-gray-600 pt-12  shadow-xl w-full absolute left-0  right-0 bottom-0 py-8 mt-4 font-semibold sm:mt-12 md:h-[220px] `}>
+      <div className={` ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} bg-white text-gray-600 pt-12  shadow-xl w-full absolute left-0  right-0 bottom-0 py-8 mt-4 font-semibold sm:mt-16 h-[220px] `}>
         <div className="w-3/4 mx-auto sm:flex sm:flex-col smx:flex-row smx:flex-wrap smx:justify-between  lg:flex md:justify-between lg:items-center ">
           <div>
             <h2 className="font-bold text-lg text-black mb-4">Hotel</h2>

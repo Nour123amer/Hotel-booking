@@ -9,7 +9,7 @@ export default function Payment() {
   return (
     <>
     <div className='grid grid-cols-12  '> 
-  <div className=' flex flex-col col-span-5 justify-self-start'>
+  <div className=' flex flex-col sm:col-span-12 lg:col-span-5 justify-self-start'>
   <h2>Pay with card</h2>
 
   <p className='mb-2'>Card info</p>
@@ -54,7 +54,7 @@ export default function Payment() {
   </div>
 
 
-  <div className='col-span-5 justify-self-end'>
+  <div className='sm:col-span-12 sm:order-1 lg:col-span-5 justify-self-end'>
     <img src="https://static.vecteezy.com/system/resources/previews/022/583/342/non_2x/credit-card-isolated-transparent-background-3d-render-icon-design-free-png.png" alt="" />
   </div>
   </div>
