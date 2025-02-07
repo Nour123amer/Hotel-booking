@@ -47,9 +47,9 @@ const navigate = useNavigate();
       <meta name="description"  content='welcome to home page' />
     </Helmet>
 
-      <div className=" grid grid-cols-12 gap-4 sm:mt-16  ">
+      <div className=" grid grid-cols-12 gap-4 sm:mt-16 sm:pt-16 ">
         <div className="sm:col-span-12 lg:col-span-6 sm:mb-6 flex flex-col sm:pt-16">
-          <h2 className="sm:text-lg  lg:text-3xl font-bold mb-6 ">
+          <h2 className="sm:text-lg  lg:text-3xl font-bold mb-6 sm:pt-16 ">
             Book your hotel and enjoy the experience And spend more time with us
           </h2>
           <p className="mb-6 text-lg text-gray-500">
@@ -108,15 +108,16 @@ const navigate = useNavigate();
 
         <div className="sm:col-span-12 grid grid-cols-12 sm:flex-col smx:flex-row lg:col-span-6  gap-4   ">
 
-          <div className="sm:w-full sm:h-full smx:col-span-6 flex flex-col gap-4 lg:h-[470px]">
+          <div className="sm:w-full sm:col-span-12 sm:h-full smx:col-span-6 flex flex-col gap-4 lg:h-[470px]">
           <img src={image3} className=" h-1/3 w-full rounded-xl" alt="" />
-          <img src={image2} className=" h-2/3 w-full rounded-xl" alt="" />
+          <img src={image2} className="sm:h-1/3  lg:h-2/3 w-full rounded-xl" alt="" />
             
           </div>
 
-          <div className="sm:w-full sm:h-full smx:col-span-6 lg:h-[485px]">
+          <div className="sm:w-full sm:col-span-12  smx:col-span-6 smx:h-[380px]  md:h-[480px]">
             <img src={image1} className="h-full w-full rounded-xl " alt="" />
           </div>
+
         </div>
 
       </div>
