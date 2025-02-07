@@ -61,7 +61,7 @@ const navigateToLogin = setTimeout(()=>{
         <meta name='description' content='welcome to about page' />
         </Helmet>
       <h2 className="mb-6 font-bold text-2xl  md:mt-2 md:pt-2 ">Contact Us</h2>
-      <div className="grid grid-cols-12 gap4 sm:mt-14 sm:pt-16">
+      <div className="grid grid-cols-12 gap4 mb-6">
         <div className="sm:col-span-12  lg:col-span-6 ">
           <ul className="flex flex-col justify-center py-8">
             <li className="flex items-center gap-2 mb-6">

@@ -47,7 +47,7 @@ const navigate = useNavigate();
       <meta name="description"  content='welcome to home page' />
     </Helmet>
 
-      <div className=" grid grid-cols-12 gap-4  md:mt-2 md:pt-2 ">
+      <div className=" grid grid-cols-12 gap-4 mt-6  md:mt-2 md:pt-2 ">
         <div className="sm:col-span-12 lg:col-span-6 sm:mb-6 flex flex-col ">
           <h2 className="sm:text-lg  lg:text-3xl font-bold mb-6 sm:pt-6 ">
             Book your hotel and enjoy the experience And spend more time with us
@@ -194,22 +194,22 @@ const navigate = useNavigate();
     <h2 className="bold text-2xl text-center mb-2">how it work?</h2>
     <p className=" text-lg text-center mb-6">Keep calm & travel on</p>
 
-    <div className="grid sm:grid-cols-12 sm:gap-4 relative ">
+    <div className="grid sm:grid-cols-12 sm:gap-4 relative mx-auto">
 
       <div className="sm:col-span-12 smx:col-span-6 lg:col-span-4">
-        <img className="w-3/4 mb-4" src='https://backend.smartvision4p.com/hotel/public/storage/abouts/112/relax.webp' alt="" />
+        <img className="sm:w-full lg:w-3/4 mb-4 " src='https://backend.smartvision4p.com/hotel/public/storage/abouts/112/relax.webp' alt="" />
         <h3 className="font-semibold text-lg text-center">Book & relax</h3>
         <p className="w-3/4 text-gray-400 text-center">Let each trip be an inspirational journey, each room a peaceful spac</p>
       </div>
 
       <div className="sm:col-span-12 smx:col-span-6 lg:col-span-4">
-        <img className="w-3/4 mb-4" src="https://backend.smartvision4p.com/hotel/public/storage/abouts/113/smart.webp" alt="" />
+        <img className="sm:w-full lg:w-3/4 mb-4" src="https://backend.smartvision4p.com/hotel/public/storage/abouts/113/smart.webp" alt="" />
         <h3 className="font-semibold text-lg text-center">Smart checklist</h3>
         <p className="w-3/4 text-gray-400 text-center">Let each trip be an inspirational journey, each room a peaceful spac</p>
       </div>
 
       <div className="sm:col-span-12 smx:col-span-6 lg:col-span-4">
-        <img className="w-3/4 mb-4" src="https://backend.smartvision4p.com/hotel/public/storage/abouts/114/save.webp" alt="" />
+        <img className="sm:w-full lg:w-3/4 mb-4" src="https://backend.smartvision4p.com/hotel/public/storage/abouts/114/save.webp" alt="" />
         <h3 className="font-semibold text-lg text-center">Save more time with us</h3>
         <p className="w-3/4 text-gray-400 text-center">Let each trip be an inspirational journey, each room a peaceful spac</p>
       </div>

@@ -157,3 +157,7 @@
 	}
 }
 
+.fa-snipping{
+	transform: rotate(360 deg);
+	animation: transform 0.5s infinite;
+}

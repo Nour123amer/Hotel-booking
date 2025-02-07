@@ -39,7 +39,7 @@ export default function Login() {
        <title>Login</title>
        <meta name='description' content='welcome to about page' />
        </Helmet>
-   <form className='flex flex-col items-center w-4/5 mx-auto' onSubmit={handleSubmit}>
+   <form className='flex flex-col items-center mt-8 w-4/5 mx-auto' onSubmit={handleSubmit}>
    <input
               className="border border-gray-400 px-3 py-1 rounded-2xl w-5/6 mb-4"
               type="text"

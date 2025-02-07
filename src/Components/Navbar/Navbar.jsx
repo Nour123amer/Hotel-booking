@@ -19,7 +19,7 @@ export default function Navbar({ noOfCartItems }) {
         theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+      <div className="container mx-auto w-5/6 flex flex-wrap items-center justify-between">
         <Link className="navbar-brand font-bold flex gap-1 items-center" to="/home">
           <i className="fa-solid fa-hotel"></i>
           <p>Hotel</p>

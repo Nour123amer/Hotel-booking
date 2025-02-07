@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { RoomInfoContext } from '../../App';
+import Loader from '../Loader/Loader';
 
 export default function RoomDetails() {
     const {id} = useParams();
@@ -73,7 +74,7 @@ console.log(selectedRoom);
     </div>
         </>
    
-    ):(<h2> Loading ... </h2>)}
+    ):(<Loader />)}
   
   
    </div>

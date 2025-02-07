@@ -725,7 +725,9 @@ function App() {
       <HelmetProvider>
         <ThemeContext.Provider value={{ theme ,toggleTheme }}>
           <RoomInfoContext.Provider value={{roomInfo,getRooms,selectedRoom ,setSelectedRoom }}>
+          <div className={`app ${theme}`}>
             <RouterProvider router={routes}></RouterProvider>
+            </div>
           </RoomInfoContext.Provider>
         </ThemeContext.Provider >
       </HelmetProvider>
