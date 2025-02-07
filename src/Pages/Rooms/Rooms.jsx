@@ -60,7 +60,7 @@ export default function Rooms() {
         <meta name='description' content='welcome to about page' />
       </Helmet>
 
-    <h2 className='font-bold text-2xl mb-4'> Rooms ({count})</h2>
+    <h2 className='font-bold text-2xl mb-4 sm:mt-16 sm:pt-16 md:mt-2 md:pt-2'> Rooms ({count})</h2>
     <div className='grid grid-cols-12 gap-4'>
      {rooms ? rooms.map((room)=>(
       <> 

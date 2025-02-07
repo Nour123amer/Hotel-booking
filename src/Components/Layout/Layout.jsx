@@ -10,7 +10,7 @@ export default function Layout({noOfCartItems}) {
   return (
     <>
       <Navbar noOfCartItems={noOfCartItems}  />
-     <div className={`container sm:mt-4 mt-14 sm:pt-4 pt-14 md:px-16  pb-[200px] ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} `}>
+     <div className={`container sm:mt-14 mt-14 sm:pt-14 pt-14 md:px-16  pb-[200px] ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} `}>
      <Outlet />
      </div>
       <Footer  />

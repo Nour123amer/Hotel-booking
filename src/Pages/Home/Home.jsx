@@ -47,7 +47,7 @@ const navigate = useNavigate();
       <meta name="description"  content='welcome to home page' />
     </Helmet>
 
-      <div className=" grid grid-cols-12 gap-4 sm:mt-16 sm:pt-16 ">
+      <div className=" grid grid-cols-12 gap-4 sm:mt-16 sm:pt-16 md:mt-2 md:pt-2 ">
         <div className="sm:col-span-12 lg:col-span-6 sm:mb-6 flex flex-col sm:pt-16">
           <h2 className="sm:text-lg  lg:text-3xl font-bold mb-6 sm:pt-16 ">
             Book your hotel and enjoy the experience And spend more time with us

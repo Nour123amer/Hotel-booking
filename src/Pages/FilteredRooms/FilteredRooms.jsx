@@ -7,11 +7,11 @@ export default function FilteredRooms({searchedRooms}) {
     
   return (
     <> 
-     <div className='border border-gray-100 px-3 py-2 shadow-2xl rounded-md p-4 grid grid-cols-12 gap-4' >
+     <div className='border border-gray-100 px-3 py-2 shadow-2xl rounded-md p-4 grid grid-cols-12 gap-4 sm:mt-16' >
 
     { searchedRooms?
     searchedRooms.map((room)=>(
-    <div className='col-span-3 border border-gray-300 rounded-xl px-2 py-1' >
+    <div className='sm:col-span-12 sm:mt-16 smx:col-span-6 lg:col-span-3 border border-gray-300 rounded-xl px-2 py-1' >
        {/* <img className='rounded-md h-[200px] mb-2' src={images.length >0 ? images[0].url :''} alt="" />
     <h3 className='text-cyan-500 text-lg mb-2'>{title}</h3>
     <p className='line-clamp-2'>{description} </p>
