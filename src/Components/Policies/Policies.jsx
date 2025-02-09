@@ -6,7 +6,7 @@ export default function Policies() {
   return (
     <>
     <h2 className='font-bold text-2xl mb-6'>Our policies</h2>
-    <div className='grid grid-cols-12 gap-8 pb-6'>
+    <div className='grid grid-cols-12 gap-8 pb-14'>
         <div className='px-3 py-4 bg-gray-200 hover:bg-slate-400 rounded-xl h-[340px] sm:col-span-6 lg:col-span-3 text-center'>
         <i className="fa-solid fa-bolt text-2xl"></i>
         <h3 className={`text-xl mb-3 ${theme === 'light' ? ' text-gray-300' : 'text-gray-700'}`}>resort</h3>

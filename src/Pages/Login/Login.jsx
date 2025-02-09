@@ -4,20 +4,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Login() {
-   function handleSubmit(e){
-      e.preventDefault();
-      console.log('submit form....');
-      
-    }
+    const notify = () => toast.info("You have logged in !");
+
     const navigate = useNavigate();
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
     const validationSchema = Yup.object({
-      name: Yup.string()
-        .required("name is required")
-        .min(3, "Name must be at least 3 characters")
-        .max(8, "Name must be at most 3 characters"),
+
       email: Yup.string()
         .required("email is required")
         .email("email is not valid"),
@@ -26,11 +21,19 @@ export default function Login() {
   
     const formik = useFormik({
       initialValues: {
-        name: "",
+       
         email: "",
-        text: "",
+        password: "",
       },
       validationSchema,
+      onSubmit:( values)=> {
+      
+         notify();
+        setTimeout(()=>{
+          navigate('/home')
+          
+        },2000)
+       }
       
     });
   return (
@@ -39,7 +42,7 @@ export default function Login() {
        <title>Login</title>
        <meta name='description' content='welcome to about page' />
        </Helmet>
-   <form className='flex flex-col items-center mt-8 w-4/5 mx-auto' onSubmit={handleSubmit}>
+   <form className='flex flex-col items-center mt-8 w-4/5 mx-auto' onSubmit={formik.handleSubmit}>
    <input
               className="border border-gray-400 px-3 py-1 rounded-2xl w-5/6 mb-4"
               type="text"
@@ -78,7 +81,8 @@ export default function Login() {
               ""
             )}
 
-     <button onClick={()=>navigate('/home')} className='bg-cyan-500 rounded-full  text-white font-bold px-5 py-2 w-fit'> Login</button>
+     <button  className='bg-cyan-500 rounded-full  text-white font-bold px-5 py-2 w-fit'> Login</button>
+     <ToastContainer />
    </form>
    </>
   )

@@ -61,7 +61,7 @@ export default function Rooms() {
       </Helmet>
 
     <h2 className='font-bold text-2xl mb-4 sm:mt-16 sm:pt-16 md:mt-2 md:pt-2'> Rooms ({count})</h2>
-    <div className='grid grid-cols-12 gap-4'>
+    <div className='grid grid-cols-12 gap-4 min-h-screen pb-8'>
      {rooms ? rooms.map((room)=>(
       <> 
         <RoomCard key={room.id} getRoomDetails={getRoomDetails} roomInfo={room} />
@@ -75,41 +75,3 @@ export default function Rooms() {
     </>
   )
 }
-
-// export default function RoomDetails(){
-//   const {id} = useParams();
-//   const navigate = useNavigate();
-//   const [selectedRoom ,setSelectedRoom] = useContext(RoomInfoContext);
-
-//   useEffect(()=>{
-//     async function getRoomDetails() {
-//         try{
-//       const options = {
-//         url:'https://backend.smartvision4p.com/hotel/public/api/rooms/${id}',
-//         method : 'GET',
-//       }
-
-//       const {data} = await axios.request(options);
-//       setSelectedRoom(data.data.single)
-
-//     }catch(error){
-//       console.log(error)
-//     }
-//     }
-
-//  getRoomDetails();
-// },[id ,setSelectedRoom]);
-// }
-
-// if(!selectedRoom){
-//   return <p>No room is selected ,please select a room</p>
-// }
-
-// const {title , description, type, price_per_day, images} = selectedRoom;
-
-
-// return(
-//   <>
-  
-//   </>
-// )

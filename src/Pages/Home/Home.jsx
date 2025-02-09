@@ -11,12 +11,10 @@ import Review from "../../Components/Review/Review";
 import Read from "../../Components/Read/Read";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-// import Facts from "../../Components/Facts/Facts";
 
 export default function Home({searchRooms ,searchedRooms}) {
 const [priceRange ,setPriceRange] = useState(0);
 const [topRated ,setTopRated] = useState();
-// const [searchedRooms ,setSearchedRooms] = useState();
 const navigate = useNavigate();
 
   async function getTopRatedRooms() {
@@ -29,10 +27,7 @@ const navigate = useNavigate();
     console.log(data);
     
     setTopRated(data.data)
-    
-
   }
-
  
   useEffect(()=>{
     getTopRatedRooms()
@@ -232,11 +227,6 @@ const navigate = useNavigate();
  {/* read */}
  <Read />
 
- {/* filter rooms */}
-{/*  
- {searchedRooms ? searchedRooms.map((room)=>(
-  <FilteredRooms roomInfo={room} searchedRooms={searchedRooms} key={room.id} />
- )):''} */}
 
 
 

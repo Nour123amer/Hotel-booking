@@ -156,7 +156,7 @@ function cancelImageClick(){
         {selectedImage && (
         <div className="grid grid-cols-12">
          {/* {selectedImage} */}
-         <i className="fa-regular fa-circle-xmark absolute right-[30%] z-10 top-9 text-2xl text-white " onClick={cancelImageClick}></i>
+         <i className="fa-regular fa-circle-xmark absolute right-[35%] z-10 top-9  text-2xl text-white " onClick={cancelImageClick}></i>
          <img src={selectedImage} className=" top-5 left-[20%] w-[40vw] h-[50vh] absolute shadow-lg" alt="" />
 
           </div>

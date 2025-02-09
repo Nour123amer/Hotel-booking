@@ -7,32 +7,27 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function Contactus() {
+  const [isSubmited ,setIsSubmited] = useState(false);
   const notify = () => toast.info("You have signed up !");
   // const emaiRef = useRef();
   const count = useRef(0);
   const navigate = useNavigate();
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+  // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
 
   useEffect(()=>{
     count.current= count.current +1;
   })
 
-  function handleSubmit(e){
-    e.preventDefault();
-    console.log('submit form....');
-    
-  }
 
   const validationSchema = Yup.object({
     name: Yup.string()
       .required("name is required")
       .min(3, "Name must be at least 3 characters")
-      .max(8, "Name must be at most 3 characters"),
+      .max(8, "Name must be at most 8 characters"),
     email: Yup.string()
       .required("email is required")
       .email("email is not valid"),
-      password:Yup.string().required("password is required").matches(passwordRegex,"password should start with uppercase letter followed by combination of letters and numbers between 8 and 15"),
-      repassword:Yup.string().required("repassword is required").oneOf([Yup.ref("password")],"password and repassword should be the same")
+     
   });
 
   const formik = useFormik({
@@ -42,16 +37,26 @@ export default function Contactus() {
       text: "",
     },
     validationSchema,
+
+    onSubmit:( values)=> {
+    setIsSubmited(true)
+     notify();
+    setTimeout(()=>{
     
+    setIsSubmited(false)
+    navigate('/login');
+      
+    },2000)
+   }
+
   });
+
   //  emaiRef.current.focus();
   // console.log(emaiRef.current);
-const navigateToLogin = setTimeout(()=>{
-   
-  navigate('/login');
-  notify();
-  
-},5000)
+// const navigateToLogin = setTimeout(()=>{
+//   navigate('/login');
+//   notify();
+// },5000)
  
   
   return (
@@ -61,7 +66,7 @@ const navigateToLogin = setTimeout(()=>{
         <meta name='description' content='welcome to about page' />
         </Helmet>
       <h2 className="mb-6 font-bold text-2xl  md:mt-2 md:pt-2 ">Contact Us</h2>
-      <div className="grid grid-cols-12 gap4 mb-6">
+      <div className="grid grid-cols-12 gap4 mb-6 min-h-screen">
         <div className="sm:col-span-12  lg:col-span-6 ">
           <ul className="flex flex-col justify-center py-8">
             <li className="flex items-center gap-2 mb-6">
@@ -81,7 +86,7 @@ const navigateToLogin = setTimeout(()=>{
         </div>
 
         <div className="sm:col-span-12  lg:col-span-6">
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form onSubmit={formik.handleSubmit} className="flex flex-col" >
             <input
             // ref={emaiRef}
 
@@ -90,8 +95,6 @@ const navigateToLogin = setTimeout(()=>{
               type="text"
               placeholder="enter your name"
               name="name"
-              // onChange ={(e)=> setName(e.target.value)}
-              // onChange={(e)=> {setName(errorMsg.target.value)}}
               value={formik.values.name}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -160,13 +163,13 @@ const navigateToLogin = setTimeout(()=>{
             <textarea
               className="border resize-none border-gray-400 px-3 py-1 rounded-2xl w-5/6 mb-4 text-gray-400"
               rows="6"
-              name=""
+              name="text"
               id=""
             >
               message
             </textarea>
 
-            <button onClick={navigateToLogin} className="bg-cyan-500 rounded-full w-5/6 text-white font-bold px-3 py-2">
+            <button type="submit" className="bg-cyan-500 rounded-full w-5/6 text-white font-bold px-3 py-2">
               Send
             </button>
             <ToastContainer />

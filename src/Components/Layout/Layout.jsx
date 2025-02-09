@@ -10,7 +10,7 @@ export default function Layout({noOfCartItems}) {
   return (
     <>
       <Navbar noOfCartItems={noOfCartItems}   />
-     <div className={`container  pt-14 md:px-16 w-full mx-auto  pb-[200px]  `}>
+     <div className={`container mt-8  pt-14 md:px-16 w-full mx-auto  pb-[200px]  `}>
      <Outlet className ='w-5/6 mx-auto' />
      </div>
     
